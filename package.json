@@ -1,0 +1,48 @@
+{
+  "name": "cgt",
+  "version": "1.0.0",
+  "description": "Tech Recruitment",
+  "author": "William Saidac",
+  "private": true,
+  "scripts": {
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "precommit": "yarn lint",
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@babylonjs/core": "^4.0.3",
+    "@babylonjs/loaders": "^4.0.3",
+    "@mapbox/stylelint-processor-arbitrary-tags": "^0.2.0",
+    "@nuxtjs/axios": "^5.3.6",
+    "babylonjs": "^4.0.3",
+    "cosmiconfig": "^5.2.1",
+    "nuxt": "^2.8.1",
+    "stylelint-at-rule-no-children": "^0.3.1",
+    "stylelint-processor-arbitrary-tags": "^0.1.0",
+    "vue-babylonjs": "^1.0.0-beta.7",
+    "vue-pixi": "^0.1.1"
+  },
+  "devDependencies": {
+    "@nuxtjs/eslint-config": "^0.0.1",
+    "@nuxtjs/eslint-module": "^0.0.1",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^6.0.1",
+    "eslint-config-standard": ">=12.0.0",
+    "eslint-plugin-import": ">=2.16.0",
+    "eslint-plugin-jest": ">=22.3.0",
+    "eslint-plugin-node": ">=8.0.1",
+    "eslint-plugin-nuxt": ">=0.4.2",
+    "eslint-plugin-promise": ">=4.0.1",
+    "eslint-plugin-standard": ">=4.0.0",
+    "eslint-plugin-vue": "^5.2.2",
+    "nodemon": "^1.18.9",
+    "pixi.js": "^5.1.0",
+    "stylelint": "^10.1.0",
+    "stylelint-config-recommended": "^2.2.0",
+    "stylelint-order": "^3.0.1",
+    "tailwindcss": "^1.0.0"
+  }
+}
