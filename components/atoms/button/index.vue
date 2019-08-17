@@ -2,7 +2,7 @@
   <button
     :disabled="isButtonDisabled"
     :class="[
-      'text-center text-xl rounded-full my-12 py-4 px-8',
+      'text-center rounded-full',
       fontColorClassName,
       backgroundColorClassName,
       hoverClassName,
@@ -30,7 +30,7 @@
       },
       color: {
         type: String,
-        default: 'secondary',
+        default: 'primary',
       },
       size: {
         type: String,
@@ -58,12 +58,18 @@
       isButtonDisabled() {
       return this.isDisabled;
       },
-      hoverClassName() {
-        const { isButtonDisabled, backgroundColorClassName } = this;
-        return !isButtonDisabled ? `hover:${backgroundColorClassName}-dark` : '';
+      hoverClassName() { // we want to change animate fade of background color on hover
+        const { isButtonDisabled, ghost, backgroundColorClassName } = this;
+        if(ghost === true) {
+          return `hover:bg-${this.color} hover:border-transparent hover:text-white`
+        } else if(!isButtonDisabled) {
+          return `hover:${backgroundColorClassName}-dark` 
+        } else {
+          return '';
+        }
       },
     },
-     methods: {
+    methods: {
     buildBackgroundColorClassName() {
       const color = this.ghost ? 'transparent' : this.color;
       return `bg-${color}`;
@@ -79,8 +85,8 @@
       const sizes = {
         xs: 'px-6 py-1 text-xs',
         sm: 'px-6 py-2 text-sm',
-        md: 'px-8 py-3 text-base',
-        lg: 'py-3 px-8 lg:py-4 text-base',
+        md: 'px-8 py-3 text-xl',
+        lg: 'py-4 px-8 text-base',
       };
       return sizes[this.size];
     },

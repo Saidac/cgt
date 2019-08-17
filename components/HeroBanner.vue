@@ -9,13 +9,15 @@
         style="position: fixed; top: 0px; left: 0px; z-index: -10;"
       >
       <h1 class="text-5xl block"> {{ title }} </h1>
-      <p class="text-xl mx-auto w-3/5"> {{ paragraph }} </p>
+      <p class="text-xl mx-auto w-3/5 mb-4"> {{ paragraph }} </p>
+      <ui-button class="lg">
+        {{ buttonTextOne }}
+      </ui-button>
       <ui-button
-        outline
-        type="primary"
-        class="mt-4"
+        ghost
+        class="lg"
       >
-        {{ buttonText }}
+        {{ buttonTextTwo }}
       </ui-button>
     </div>
   </div>
@@ -40,7 +42,8 @@ export default {
   },
   data() {
     return {
-      buttonText: 'Hej',
+      buttonTextOne: 'One',
+      buttonTextTwo: 'Two',
     }
   },
 }
