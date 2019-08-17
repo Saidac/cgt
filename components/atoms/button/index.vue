@@ -30,7 +30,7 @@
       },
       color: {
         type: String,
-        default: 'primary',
+        default: 'secondary-light',
       },
       size: {
         type: String,
@@ -71,7 +71,7 @@
     },
     methods: {
     buildBackgroundColorClassName() {
-      const color = this.ghost ? 'transparent' : this.color;
+      const color = this.ghost ? 'white' : this.color;
       return `bg-${color}`;
     },
     buildBorderClassName() {

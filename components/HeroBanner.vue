@@ -1,21 +1,24 @@
 <template>
-  <div
-    style="height: 40rem;"
-    class="bg-dark"
-  >
-    <div class="bg-fade">
-      <img
-        src="~/assets/bg.svg"
-        style="position: fixed; top: 0px; left: 0px; z-index: -10;"
+  <div class="heroBannerBackground">
+    <div class="mt-64 justify-center">
+      <h1
+        style="font-family: Poppins"
+        class="text-5xl block"
       >
-      <h1 class="text-5xl block"> {{ title }} </h1>
-      <p class="text-xl mx-auto w-3/5 mb-4"> {{ paragraph }} </p>
-      <ui-button class="lg">
+        {{ title }}
+      </h1>
+      <UiSubTitle
+        size="xl"
+        class="leading-relaxed mb-8 w-3/5 mx-auto"
+      >
+        {{ paragraph }}
+      </UiSubTitle>
+      <ui-button class="lg w-56 h-16 mx-1">
         {{ buttonTextOne }}
       </ui-button>
       <ui-button
         ghost
-        class="lg"
+        class="lg w-56 h-16 mx-1"
       >
         {{ buttonTextTwo }}
       </ui-button>
@@ -25,9 +28,11 @@
 
 <script>
 import UiButton from '@/components/atoms/button/index.vue';
+import UiSubTitle from '@/components/atoms/subtitle/index.vue';
 
 export default {
   components: {
+    UiSubTitle,
     UiButton
   },
   props: {
@@ -42,24 +47,23 @@ export default {
   },
   data() {
     return {
-      buttonTextOne: 'One',
-      buttonTextTwo: 'Two',
+      buttonTextOne: 'Our Positions',
+      buttonTextTwo: 'Our Tech',
     }
   },
 }
 </script>
 
 <style lang="postcss" scoped>
-.bg-fade {
-  @apply bg-primary text-dark rounded-full my-12 py-4 w-48 inline-block text-white text-center leading-normal inline-block w-screen pt-64;
-
-  position: fixed;
-  z-index: 10;
+.heroBannerBackground {
+  @apply bg-primary text-dark text-center leading-normal inline-block w-screen;
+  height: 640px;
   background: linear-gradient(
-    to bottom,
-    rgba(8, 22, 44, 0.65) 0%,
-    rgba(0, 0, 0, 0.01) 99%,
-    rgba(0, 0, 0, 0) 100%
-  );
+      0deg,
+      rgba(242, 243, 245, 0.5) 20%,
+      rgba(242, 243, 245, 0) 45%,
+      rgba(255, 255, 255, 1) 78%
+    ),
+    url(~assets/bg.svg);
 }
 </style>
