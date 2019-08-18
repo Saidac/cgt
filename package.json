@@ -19,6 +19,7 @@
     "@nuxtjs/axios": "^5.3.6",
     "babylonjs": "^4.0.3",
     "cosmiconfig": "^5.2.1",
+    "lodash.omit": "^4.5.0",
     "nuxt": "^2.8.1",
     "stylelint-at-rule-no-children": "^0.3.1",
     "stylelint-processor-arbitrary-tags": "^0.1.0",

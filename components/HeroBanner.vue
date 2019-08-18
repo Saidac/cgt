@@ -1,12 +1,23 @@
 <template>
   <div class="heroBannerBackground">
+    <div class="absolute z-10 w-full">
+      <div class="float-right">
+        <UiLink
+          url="#"
+          color="secondary"
+        >
+          About Us
+        </UiLink>
+        <UiLink
+          url="#"
+          color="secondary"
+        >
+          Tech
+        </UiLink>
+      </div>
+    </div>
     <div class="mt-64 justify-center">
-      <h1
-        style="font-family: Poppins"
-        class="text-5xl block"
-      >
-        {{ title }}
-      </h1>
+      <UiHeadline class="text-5xl"> {{ title }} </UiHeadline>
       <UiSubTitle
         size="xl"
         class="leading-relaxed mb-8 w-3/5 mx-auto"
@@ -28,12 +39,17 @@
 
 <script>
 import UiButton from '@/components/atoms/button/index.vue';
+import UiHeadline from '@/components/atoms/headline/index.vue';
 import UiSubTitle from '@/components/atoms/subtitle/index.vue';
+import UiLink from '@/components/atoms/link/index.vue';
+
 
 export default {
   components: {
+    UiHeadline,
     UiSubTitle,
-    UiButton
+    UiButton,
+    UiLink
   },
   props: {
     title: {
